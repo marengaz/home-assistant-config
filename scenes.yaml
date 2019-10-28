@@ -1,0 +1,52 @@
+
+- name: Welcome Home Daytime
+  entities:
+    light.kitchen_living: on
+    light.hallway: on
+- name: Welcome Home Evening
+  entities:
+    light.kitchen_living:
+      state: on
+      brightness: 128
+    light.hallway:
+      state: on
+      brightness: 128
+    light.bedroom:
+      state: on
+      brightness: 128
+    light.ensuite:
+      state: on
+      brightness: 128
+- name: Movies
+  entities:
+    light.kitchen_living:
+      state: on
+      brightness: 128
+- name: Wake Up
+  entities:
+    light.bedroom:
+      state: on
+      brightness: 64
+- name: Sexy Time
+  entities:
+    light.bedroom:
+      state: on
+      brightness: 64
+    light.kitchen_living: off
+    light.hallway: off
+    light.bathroom: off
+    light.spare_room: off
+    light.ensuite: off
+- name: Bed Time
+  entities:
+    light.bedroom:
+      state: on
+      brightness: 64
+    light.ensuite:
+      state: on
+      brightness: 128
+    light.kitchen_living: off
+    light.hallway: off
+    light.bathroom: off
+    light.bedroom_2: off
+

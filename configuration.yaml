@@ -1,0 +1,78 @@
+
+default_config:
+
+logger:
+  default: error
+  # logs:
+  #   custom_components.rakolights.light: debug
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  api_key: !secret google_assistant_api_key
+  expose_by_default: false
+  exposed_domains:
+    - scene
+    - light
+    - script
+  entity_config:
+    script.welcome_home:
+      name: welcome home
+      expose: true
+    light.kitchen_living:
+      name: kitchen
+      expose: true
+    light.bedroom:
+      name: bedroom
+      expose: true
+    light.ensuite:
+      name: ensuite
+      expose: true
+    light.hallway:
+      name: hallway
+      expose: true
+    light.bathroom:
+      name: bathroom
+      expose: true
+    light.spare_room:
+      name: spare room
+      expose: true
+    scene.movies:
+      expose: true
+    scene.wake_up:
+      expose: true
+    scene.sexy_time:
+      expose: true
+    scene.bed_time:
+      expose: true
+
+light: !include lights.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+recorder: !include recorder.yaml
+
+person:
+  - name: Ben
+    id: 7838b075b8b042ec9fcebe3c76cc1b7a
+    user_id: 443950fa2da5420a9e533b177eabfe5c
+    # device_trackers:
+    #   - device_tracker.ada
+  - name: Ashleigh
+    id: b90ea40b44e84deca05fc09a7badf8b9
+    user_id: b5a7819ecb234ba0aad61145548068e8
+    # device_trackers:
+    #   - device_tracker.stacey
+    #   - device_tracker.beacon
+
+homeassistant:
+  name: Home
+  unit_system: metric
+
+  customize:
+    person.ben:
+      entity_picture: "/local/image/ben.jpg"

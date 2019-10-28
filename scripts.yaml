@@ -1,0 +1,25 @@
+welcome_home:
+  sequence:
+    - service: script.turn_on
+      data:
+        entity_id: script.welcome_home_daytime
+    - service: script.turn_on
+      data:
+        entity_id: script.welcome_home_evening
+welcome_home_daytime:
+  sequence:
+    - condition: time
+      after: '05:00:01'
+      before: '22:00:00'
+    - service: scene.turn_on
+      data:
+        entity_id: scene.welcome_home_daytime
+welcome_home_evening:
+  sequence:
+    - condition: time
+      after: '22:00:01'
+      before: '05:00:00'
+    - service: scene.turn_on
+      data:
+        entity_id: scene.welcome_home_evening
+

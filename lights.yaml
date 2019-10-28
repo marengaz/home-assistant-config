@@ -1,0 +1,68 @@
+#light.kitchen_living
+#light.bedroom
+#light.ensuite
+#light.hallway
+#light.bathroom
+#light.spare_room
+
+- platform: mqtt
+  name: Kitchen Living
+  # icon: mdi:sofa
+  schema: json
+  state_topic: "rako/room/5"
+  command_topic: "rako/room/5/set"
+  brightness: true
+- platform: mqtt
+  name: Bedroom
+  # icon: mdi:hotel
+  schema: json
+  state_topic: "rako/room/9"
+  command_topic: "rako/room/9/set"
+  brightness: true
+- platform: mqtt
+  name: Ensuite
+  # icon: mdi:shower-head
+  schema: json
+  state_topic: "rako/room/10"
+  command_topic: "rako/room/10/set"
+  brightness: true
+- platform: mqtt
+  name: Hallway
+  # icon: mdi:door
+  schema: json
+  state_topic: "rako/room/13"
+  command_topic: "rako/room/13/set"
+  brightness: true
+- platform: mqtt
+  name: Bathroom
+  # icon: mdi:toilet
+  schema: json
+  state_topic: "rako/room/17"
+  command_topic: "rako/room/17/set"
+  brightness: true
+- platform: mqtt
+  name: Spare Room
+  # icon: mdi:bed-empty
+  schema: json
+  state_topic: "rako/room/21"
+  command_topic: "rako/room/21/set"
+  brightness: true
+
+#- platform: group
+#  name: Kitchen Living
+#  icon: mdi:sofa
+#- platform: group
+#  name: Bedroom
+#  icon: mdi:hotel
+#- platform: group
+#  name: Ensuite
+#  icon: mdi:shower-head
+#- platform: group
+#  name: Hallway
+#  icon: mdi:door
+#- platform: group
+#  name: Bathroom
+#  icon: mdi:toilet
+#- platform: group
+#  name: Spare Room
+#  icon: mdi:bed-empty
